@@ -7,15 +7,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BagsPage extends Page {
+	
+	// Selectors within the DOM.
+	By smallBagRadioBtn = By.cssSelector(".ry-radio-circle-button__label");
+	By continueBtn = By.cssSelector(".ry-button--gradient-yellow");
 
 	public BagsPage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
 		pageName = "Edit Personal Details";
 		PageFactory.initElements(driver, this);
 	}
-
-	By smallBagRadioBtn = By.cssSelector(".ry-radio-circle-button__label");
-	By continueBtn = By.cssSelector(".ry-button--gradient-yellow");
 
 	public void selectSmallBag() {
 		wait.until(ExpectedConditions.presenceOfElementLocated(smallBagRadioBtn));

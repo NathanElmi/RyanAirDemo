@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Jul 30 16:38:58 BST 2023</td>
+<td>Started on:</td><td>Thu Aug 17 21:41:34 BST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>13 seconds (13059 ms)</td>
+<tr><td>Total time:</td><td>15 seconds (15011 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,35 +75,12 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Regression.Main.loginToAccount()'><b>loginToAccount</b><br>Test class: Regression.Main</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.header-menu-item.ng-star-inserted[aria-label=&apos;Log In&apos;]&quot;}
-  (Session info: chrome=115.0.5790.110)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [42fb042ccbea4d0c3474505a6ae73c5d, findElement {using=css selector, value=.header-menu-item.ng-star-inserted[aria-label=&apos;Log In&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f...}, goog:chromeOptions: {debuggerAddress: localhost:56426}, pageLoadStrategy: normal, platformName: ANY, proxy: Proxy(), se:cdp: ws://localhost:56426/devtoo..., se:cdpVersion: 115.0.5790.110, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 42fb042ccbea4d0c3474505a6ae73c5d
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at jdk.proxy2/jdk.proxy2.$Proxy15.click(Unknown Source)
-	at Webpages.Homepage.clickLogin(Homepage.java:56)
-	at Regression.Main.loginToAccount(Main.java:69)
+<td title='Regression.StandardFlights.bookStandardReturnflight()'><b>bookStandardReturnflight</b><br>Test class: Regression.StandardFlights</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.cssSelector: .fare-card__button.fare-card__price.ry-button--outline-dark-blue&apos; (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at Webpages.FlightsPage.selectFareType(FlightsPage.java:59)
+	at Regression.StandardFlights.bookStandardReturnflight(StandardFlights.java:79)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -130,16 +107,15 @@ Session ID: 42fb042ccbea4d0c3474505a6ae73c5d
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1615873578", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1615873578'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.header-menu-item.ng-star-inserted[aria-label=&apos;Log In&apos;]&quot;}
-  (Session info: chrome=115.0.5790.110)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.fare-card__button.fare-card__price.ry-button--outline-dark-blue&quot;}
+  (Session info: chrome=115.0.5790.173)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [42fb042ccbea4d0c3474505a6ae73c5d, findElement {using=css selector, value=.header-menu-item.ng-star-inserted[aria-label=&apos;Log In&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f...}, goog:chromeOptions: {debuggerAddress: localhost:56426}, pageLoadStrategy: normal, platformName: ANY, proxy: Proxy(), se:cdp: ws://localhost:56426/devtoo..., se:cdpVersion: 115.0.5790.110, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 42fb042ccbea4d0c3474505a6ae73c5d
+Command: [06e258ad30fe1e81f4373adc76cac765, findElement {using=css selector, value=.fare-card__button.fare-card__price.ry-button--outline-dark-blue}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.173, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f...}, goog:chromeOptions: {debuggerAddress: localhost:59042}, pageLoadStrategy: normal, platformName: ANY, proxy: Proxy(), se:cdp: ws://localhost:59042/devtoo..., se:cdpVersion: 115.0.5790.173, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 06e258ad30fe1e81f4373adc76cac765
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
@@ -156,9 +132,21 @@ Session ID: 42fb042ccbea4d0c3474505a6ae73c5d
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at jdk.proxy2/jdk.proxy2.$Proxy15.click(Unknown Source)
-	at Webpages.Homepage.clickLogin(Homepage.java:56)
-	at Regression.Main.loginToAccount(Main.java:69)
+	at jdk.proxy2/jdk.proxy2.$Proxy15.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:307)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:40)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:293)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:660)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	... 28 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace847018986", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace847018986'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.cssSelector: .fare-card__button.fare-card__price.ry-button--outline-dark-blue&apos; (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at Webpages.FlightsPage.selectFareType(FlightsPage.java:59)
+	at Regression.StandardFlights.bookStandardReturnflight(StandardFlights.java:79)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -185,9 +173,43 @@ Session ID: 42fb042ccbea4d0c3474505a6ae73c5d
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.fare-card__button.fare-card__price.ry-button--outline-dark-blue&quot;}
+  (Session info: chrome=115.0.5790.173)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [06e258ad30fe1e81f4373adc76cac765, findElement {using=css selector, value=.fare-card__button.fare-card__price.ry-button--outline-dark-blue}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.173, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f...}, goog:chromeOptions: {debuggerAddress: localhost:59042}, pageLoadStrategy: normal, platformName: ANY, proxy: Proxy(), se:cdp: ws://localhost:59042/devtoo..., se:cdpVersion: 115.0.5790.173, setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 06e258ad30fe1e81f4373adc76cac765
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy15.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:307)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:40)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:293)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:660)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	... 28 more
 </pre></div></td>
-<td>0</td>
-<td>Regression.Main@1d9b7cce</td></tr>
+<td>13</td>
+<td>Regression.StandardFlights@1d9b7cce</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -197,10 +219,10 @@ Session ID: 42fb042ccbea4d0c3474505a6ae73c5d
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Regression.Main.bookStandardReturnflight()'><b>bookStandardReturnflight</b><br>Test class: Regression.Main</td>
+<td title='Regression.StandardFlights.loginToAccount()'><b>loginToAccount</b><br>Test class: Regression.StandardFlights</td>
 <td></td>
-<td>11</td>
-<td>Regression.Main@1d9b7cce</td></tr>
+<td>0</td>
+<td>Regression.StandardFlights@1d9b7cce</td></tr>
 </table><p>
 </body>
 </html>

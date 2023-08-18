@@ -10,31 +10,34 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Page {
 
+	// All pages share some common functionality (e.g. need for random data or
+	// ability to screenshot). This Page can handle this functionality
+
 	WebDriver driver;
 	WebDriverWait wait;
 	String pageName;
 
-	// Values that can be used as input for forms
+	// Values that can be used as input for forms (not currently used)
 	String[] maleFirstNames = { "maleTestFirstName1", "maleTestFirstName2", "maleTestFirstName3" };
 	String[] femaleFirstNames = { "femaleTestFirstName1", "femaleTestFirstName2", "femaleTestFirstName3" };
 	String[] LastNames = { "testLastName1", "testLastName2", "testLastName3" };
-	String postCode = "IG8 0SG";
+	String[] postCode = { "IG8 0SG", "IG1 3EL" };
 
 	public Page(WebDriver driver, WebDriverWait wait) {
 		this.driver = driver;
 		this.wait = wait;
 	}
 
+	// Obtain a number between 0 - (maxNumber-1).
+	// Used for randomizing input data.
 	public int getRandomNumber(int maxNumber) {
-
-		// Obtain a number between 0 - (maxNumber-1).
-		// Used for randomizing input data.
 		Random rand = new Random();
 		int n = rand.nextInt(maxNumber);
 		return n;
 	}
 
-	// This method generates a future date by taking the current date and adding x amount of days to it.
+	// This method generates a future date by taking the current date and adding x
+	// amount of days to it.
 	// It then returns a string in the format YYYY-MM-DD.
 	protected String generateFutureDate(int lengthOfTrip) {
 		Calendar calendar = Calendar.getInstance();

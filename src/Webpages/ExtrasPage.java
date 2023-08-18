@@ -7,9 +7,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ExtrasPage extends Page {
-	
+
+	// Selectors within the DOM.
 	By airAndFlightContinueBtn = By.cssSelector(".airport-and-flight__cta.ry-button--gradient-yellow.ry-button--large");
 	By transportContinueBtn = By.cssSelector(".transport__cta.ry-button--gradient-yellow.ry-button--large");
+	By declineInsuranceBtn = By.cssSelector(
+			".enhanced-takeover__product-dismiss-cta.ry-button--anchor-blue.ry-button--anchor.ng-star-inserted");
 
 	public ExtrasPage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
@@ -18,20 +21,16 @@ public class ExtrasPage extends Page {
 	}
 
 	public void declineInsuranceBtn() {
-		//
-		/*
-		 * driver.findElement(By.cssSelector(
-		 * ".enhanced-takeover__product-dismiss-cta.ry-button--anchor-blue.ry-button--anchor.ng-star-inserted"
-		 * )) .click();
-		 */
+		wait.until(ExpectedConditions.elementToBeClickable(airAndFlightContinueBtn));
+		driver.findElement(declineInsuranceBtn).click();
 
 	}
 
-	public void continueBtn() {
+	public void continueBtn() {	
 		wait.until(ExpectedConditions.elementToBeClickable(airAndFlightContinueBtn));
 		driver.findElement(airAndFlightContinueBtn).click();
+		
 		wait.until(ExpectedConditions.elementToBeClickable(transportContinueBtn));
 		driver.findElement(transportContinueBtn).click();
 	}
-
 }

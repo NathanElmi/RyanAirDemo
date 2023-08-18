@@ -1,9 +1,12 @@
 package Webpages;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Scanner;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,14 +22,13 @@ public class Homepage extends Page {
 
 	private static String PAGE_URL = "https://www.ryanair.com/gb/en";
 
+	// TODO User Credentials are below. Could possibly read them in from an external
+	// file [inserted by Nathan, 17 Aug 2023]
 	String username = "nathan_elmi@hotmail.co.uk";
+	String password = ""; // password from personal account removed.
 	String nameOfUser = "Nathan";
-	String password = "Nat@ryanair1";
 
 	// Selectors within the DOM.
-	// Not all selectors can be initialised at initial page load because they are
-	// not visible.
-
 	@FindBy(css = ".header-menu-item.ng-star-inserted[aria-label='Log In']")
 	private WebElement loginBtn;
 
@@ -39,6 +41,8 @@ public class Homepage extends Page {
 	@FindBy(css = ".flight-search-widget__start-search.ry-button--gradient-yellow")
 	private WebElement searchBtn;
 
+	// Not all selectors can be initialised at initial page load because they might
+	// not visible. For those selectors, I have provided the By locators
 	By usernameTextBox = By.cssSelector(".body-l-lg.body-l-sm.invisible-background[placeholder='email@email.com']");
 	By passwordTextBox = By.cssSelector(".body-l-lg.body-l-sm.invisible-background[placeholder='Password']");
 	By confirmLoginBtn = By.cssSelector(".auth-submit__button.ry-button--full.ry-button--flat-yellow");
@@ -48,7 +52,6 @@ public class Homepage extends Page {
 	public Homepage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
 		pageName = "Edit Personal Details";
-		//driver.get(PAGE_URL);
 		PageFactory.initElements(driver, this);
 	}
 
@@ -57,6 +60,7 @@ public class Homepage extends Page {
 	}
 
 	public void enterCredentials() {
+
 		wait.until(ExpectedConditions.elementToBeClickable(usernameTextBox));
 		driver.findElement(usernameTextBox).sendKeys(username);
 		driver.findElement(passwordTextBox).sendKeys(password);
@@ -64,7 +68,8 @@ public class Homepage extends Page {
 	}
 
 	public boolean isUserLoggedIn() {
-		if (driver.findElements(nameOfLoggedInUser).size()>0&&nameOfUser.equals(driver.findElement(nameOfLoggedInUser).getText())) {
+		if (driver.findElements(nameOfLoggedInUser).size() > 0
+				&& nameOfUser.equals(driver.findElement(nameOfLoggedInUser).getText())) {
 			return true;
 		}
 		return false;
@@ -79,31 +84,35 @@ public class Homepage extends Page {
 		toDestinationTextBox.sendKeys("Spain");
 	}
 
+	// The below method stores all airports within a list and then iterates over the
+	// list to find a specific airport (Barcelona)
 	public void selectDestinationAirport() {
+		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(listofAirportsLocator));
 		List<WebElement> listOfAirports = driver.findElements(listofAirportsLocator);
 		for (WebElement element : listOfAirports) {
-			// System.out.println(e.getAccessibleName());
 			if (element.getAccessibleName().equals("Barcelona")) {
-				wait.until(ExpectedConditions.elementToBeClickable(element));
 				element.click();
 				break;
 			}
 		}
 	}
 
+	/*
+	 * Selecting the departure and return dates is tricky as the CSS is dynamic and
+	 * the CSS selector will contain the actual date. An example would be
+	 * ".calendar-body__cell[data-id='2023-08-25']" Therefore, I created a method,
+	 * generateFutureDate(int x), which takes the current date and returns a date x
+	 * amount of days in the future.
+	 */
+
 	public void selectDepartureDate() {
-		int daysUntilDeparture = 2; // Departing in 2 days time.
+		int daysUntilDeparture = 2;
 		String departureDateSelector = ".calendar-body__cell[data-id='" + generateFutureDate(daysUntilDeparture) + "']";
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(departureDateSelector)));
 		driver.findElement(By.cssSelector(departureDateSelector)).click();
 	}
 
-	// Selecting the departure and return dates is tricky as the CSS
-	// is dynamic and the selector will contain the specific date.
-	// Rather than hardcoding the dates, the generateFutureDate(int x) method will
-	// return a date x amount of days in the future. This is then combined with the
-	// CSS to find the locator.
 	public void selectReturnDate() {
 		int daysUntilReturn = 21; // Return date is 21 days in the future
 		String returnDateSelector = ".calendar-body__cell[data-id='" + generateFutureDate(daysUntilReturn) + "']";
@@ -112,7 +121,7 @@ public class Homepage extends Page {
 		driver.findElement(By.cssSelector(returnDateSelector)).click();
 	}
 
-	public void clickSearchBtn() {
+	public void clickSearch() {
 		searchBtn.click();
 	}
 
